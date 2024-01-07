@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html"><img src="pic/abdohbank.png" height="100" width="200" alt=""></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="signin.html">signin</a>
+              </li>
+           
+             
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="about.html">about us</a></li>
+                  <li><a class="dropdown-item" href="loans.html">loans</a></li>
+                  <li><a class="dropdown-item" href="sitemap.html">site map</a></li>
+                  <li><a class="dropdown-item" href="policies.html">policies</a></li>
+                  <li><a class="dropdown-item" href="busniess.html">buniess days</a></li>
+                  <li><a class="dropdown-item" href="life insurance.html">life insurance </a></li>
+                  <li><hr class="dropdown-divider"></li>
+              
+                </ul>
+              </li>
+            
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+      <div class="container mt-4">
+        <h4>Explore Flexible Loans at Abdoh Bank</h4>
+        <p>
+          Abdoh Bank takes pride in offering a wide range of loan options tailored to meet your financial needs. Whether you're dreaming of a new home, planning to start a business, or need funds for education, our competitive interest rates and flexible repayment plans make achieving your goals easier.
+    
+          Our team of financial experts is here to guide you through the loan application process, ensuring transparency and personalized assistance. Abdoh Bank understands that every financial journey is unique, and we are committed to providing solutions that fit your individual circumstances.
+    
+          To help you estimate the cost of your loan, use our simple interest calculator below. Enter the loan amount, interest rate, and term to get an instant calculation of your monthly payments.
+        </p>
+      </div>
+      <div class="container mt-4">
+        <h4>Loan Interest Calculator</h4>
+        <form>
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              <label for="loanAmount">Loan Amount ($)</label>
+              <input type="number" class="form-control" id="loanAmount" placeholder="Enter loan amount" required>
+            </div>
+            <div class="form-group col-md-4">
+              <label for="interestRate">Interest Rate (%)</label>
+              <input type="number" class="form-control" id="interestRate" placeholder="Enter interest rate" required>
+            </div>
+            <div class="form-group col-md-4">
+              <label for="loanTerm">Loan Term (months)</label>
+              <input type="number" class="form-control" id="loanTerm" placeholder="Enter loan term" required>
+            </div>
+          </div>
+          <button type="button" class="btn btn-primary" onclick="calculateInterest()">Calculate</button>
+        </form>
+        <p id="monthlyPayment" class="mt-2"></p>
+      </div>
+      <script>
+        function calculateInterest() {
+          const loanAmount = document.getElementById('loanAmount').value;
+          const interestRate = document.getElementById('interestRate').value / 100;
+          const loanTerm = document.getElementById('loanTerm').value;
+    
+          const monthlyInterest = (loanAmount * interestRate) / loanTerm;
+          const monthlyPayment = (parseFloat(loanAmount) / parseFloat(loanTerm)) + monthlyInterest;
+    
+          document.getElementById('monthlyPayment').innerText = `Estimated Monthly Payment: $${monthlyPayment.toFixed(2)}`;
+        }
+      </script>
+    
+
+
+
+
+
+
+
+
+
+   
+    
+
+
+
+
+
+
+
+
+
+   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+<footer class="bg-dark text-light text-center py-3">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h5>Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="life insurance.html">life insurance</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col">
+          <h5>Connect With Us</h5>
+          <ul class="list-unstyled">
+            <li><a href="#" target="_blank">Facebook</a></li>
+            <li><a href="#" target="_blank">Twitter</a></li>
+            <li><a href="#" target="_blank">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+</html>
